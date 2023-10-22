@@ -1,3 +1,4 @@
+from django.core.paginator import Paginator
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from .forms import EmployeeForm
@@ -23,8 +24,11 @@ def add_show(request):
     else:
         fm = EmployeeForm()
 
-    emp = Employee.objects.all()
-    return render(request, 'employee/addandshow.html', {'form': fm, 'emp': emp})
+    emp = Employee.objects.all().order_by('id')
+    paginator = Paginator(emp, 6)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    return render(request, 'employee/addandshow.html', {'form': fm, 'emp': page_obj})
 
 
 # this function will delete the employee

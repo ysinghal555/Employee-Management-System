@@ -57,6 +57,35 @@
             </tbody>
         </table>
 
+        <nav>
+            <ul class="pagination">
+                {% if emp.has_previous %}
+                <li class="page-item"><a class="page-link" href="?page={{emp.previous_page_number}}">Previous</a></li>
+                {% endif %}
+
+                <li class="page-item"><a class="page-link" href="#">{{ emp.number }}</a></li>
+
+                {% if emp.has_next %}
+                <li class="page-item"><a class="page-link" href="?page={{emp.next_page_number}}">Next</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+
+<!--        Layout for basic Pagination-->
+<!--        <div>-->
+<!--            <span>-->
+<!--                {% if emp.has_previous %}-->
+<!--                    <a href="?page={{emp.previous_page_number}}">Previous</a>-->
+<!--                {% endif %}-->
+
+<!--                <span>{{ emp.number }}</span>-->
+
+<!--                {% if emp.has_next %}-->
+<!--                    <a href="?page={{emp.next_page_number}}">Next</a>-->
+<!--                {% endif %}-->
+<!--            </span>-->
+<!--        </div>-->
+
         {% else %}
         <h4 class="text-center alert alert-warning">No Records found</h4>
 
