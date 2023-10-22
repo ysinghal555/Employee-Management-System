@@ -14,8 +14,10 @@ def add_show(request):
             email = fm.cleaned_data['email']
             salary = fm.cleaned_data['salary']
             department = fm.cleaned_data['department']
+            role = fm.cleaned_data['role']
             phone_number = fm.cleaned_data['phone_number']
-            reg = Employee(name=name, email=email, salary=salary, department=department, phone_number=phone_number)
+            reg = Employee(name=name, email=email, salary=salary, department=department, role=role,
+                           phone_number=phone_number)
             reg.save()
             # fm.save()
 
