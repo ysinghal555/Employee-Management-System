@@ -70,22 +70,7 @@ python manage.py runserver
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Employee-Management-System
+# Preview
 
 When no record is present for any Employee in the database.
 ![image](https://github.com/ysinghal555/Employee-Management-System/assets/49035527/36a1c3b0-9a27-43e7-bb8a-c592f2195eef)
